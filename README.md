@@ -1,1 +1,1 @@
-# KupsztyosProjects
+# KupsztylosProjects
