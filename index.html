@@ -30,24 +30,24 @@
         <h2>Mechaniki Gry</h2>
 
         <div class="mechanic">
-            <button onclick="toggleContent('exploration')">Eksploracja</button>
-            <p id="exploration" class="hidden">
-                Świat gry to pełen detali i niebezpieczeństw otwarty teren, gdzie każdy zakątek kryje coś nowego. Eksplorując ruiny zapomnianych miast i tajemnicze jaskinie, odkryjesz ukryte historie, które stopniowo odsłonią przed tobą przeszłość tego miejsca...
-            </p>
+            <div class="clickable-block" onclick="openModal('exploration')">
+                <h3>Eksploracja</h3>
+                <p>Kliknij, aby dowiedzieć się więcej...</p>
+            </div>
         </div>
 
         <div class="mechanic">
-            <button onclick="toggleContent('combat')">Walka</button>
-            <p id="combat" class="hidden">
-                Walka to wyzwanie i satysfakcja w jednym. System walki jest dynamiczny, brutalny i wymaga strategii – musisz rozważnie dobierać broń i umiejętności, by mierzyć się z przeciwnikami o różnym poziomie trudności...
-            </p>
+            <div class="clickable-block" onclick="openModal('combat')">
+                <h3>Walka</h3>
+                <p>Kliknij, aby dowiedzieć się więcej...</p>
+            </div>
         </div>
 
         <div class="mechanic">
-            <button onclick="toggleContent('character')">System Rozwoju i Wybory Moralne</button>
-            <p id="character" class="hidden">
-                Każda decyzja podjęta przez gracza wpływa na świat, a także na samego Nohana. W niektórych alternatywnych rzeczywistościach Nohan może napotkać wersje siebie samego – w niektórych wersjach jest szanowanym przywódcą, w innych bezwzględnym tyranem...
-            </p>
+            <div class="clickable-block" onclick="openModal('character')">
+                <h3>System Rozwoju i Wybory Moralne</h3>
+                <p>Kliknij, aby dowiedzieć się więcej...</p>
+            </div>
         </div>
     </section>
 
@@ -68,19 +68,46 @@
         <button class="download-button">Pobierz Teraz</button>
     </section>
 
+    <!-- Modal (wyskakujące okno) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-content"></p>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Cień Dawnych Światów. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
     <script>
-        // Funkcja do rozwijania i zwijania sekcji
-        function toggleContent(id) {
-            var content = document.getElementById(id);
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
+        // Funkcja do otwierania modala
+        function openModal(section) {
+            var modal = document.getElementById('modal');
+            var title = document.getElementById('modal-title');
+            var content = document.getElementById('modal-content');
+
+            if (section === 'exploration') {
+                title.innerHTML = 'Eksploracja';
+                content.innerHTML = 'Świat gry to pełen detali i niebezpieczeństw otwarty teren, gdzie każdy zakątek kryje coś nowego. Eksplorując ruiny zapomnianych miast i tajemnicze jaskinie, odkryjesz ukryte historie, które stopniowo odsłonią przed tobą przeszłość tego miejsca...';
+            } else if (section === 'combat') {
+                title.innerHTML = 'Walka';
+                content.innerHTML = 'Walka to wyzwanie i satysfakcja w jednym. System walki jest dynamiczny, brutalny i wymaga strategii – musisz rozważnie dobierać broń i umiejętności, by mierzyć się z przeciwnikami o różnym poziomie trudności...';
+            } else if (section === 'character') {
+                title.innerHTML = 'System Rozwoju i Wybory Moralne';
+                content.innerHTML = 'Każda decyzja podjęta przez gracza wpływa na świat, a także na samego Nohana. W niektórych alternatywnych rzeczywistościach Nohan może napotkać wersje siebie samego – w niektórych wersjach jest szanowanym przywódcą, w innych bezwzględnym tyranem...';
             }
+
+            modal.style.display = "block";
+            document.body.style.filter = "blur(5px)";
+        }
+
+        // Funkcja do zamykania modala
+        function closeModal() {
+            var modal = document.getElementById('modal');
+            modal.style.display = "none";
+            document.body.style.filter = "none";
         }
     </script>
 </body>

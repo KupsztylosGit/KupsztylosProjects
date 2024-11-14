@@ -140,7 +140,7 @@ footer {
     text-align: center;
 }
 
-/* Styl przycisków i ukrytych sekcji */
+/* Styl przycisków i ukrytych sekcji 
 .hidden {
     display: none;
 }
@@ -159,4 +159,70 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+ Styl całych bloków przycisków */
+.clickable-block {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+    width: 30%;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.clickable-block:hover {
+    transform: scale(1.05);
+}
+
+h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Styl dla modala */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+    transition: filter 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
