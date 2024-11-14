@@ -69,48 +69,57 @@ section {
     border-radius: 10px;
 }
 
-.mechanics-details {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+
+
+/* Tytuł galerii */
+#gallery h2 {
+    text-align: center; /* Wyśrodkowanie tekstu */
+    color: #fff; /* Kolor tekstu */
+    font-size: 2rem; /* Rozmiar czcionki tytułu */
+    margin-bottom: 20px; /* Odstęp od zdjęć */
 }
 
-.mechanic {
-    flex: 1;
-    max-width: 300px;
-    background: #2a2a2a;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.mechanic:hover {
-    transform: scale(1.05);
-}
-
+/* Kontener galerii */
 #gallery {
     background-color: #1a1a1a;
     padding: 40px;
     border-radius: 10px;
-    margin: 40px 0;
+    margin: 40px 0; /* Automatyczny margines boczny, aby kontener był wyśrodkowany */
+    width: 100%; /* Rozciągamy kontener na całą szerokość */
+    max-width: 100%; /* Maksymalna szerokość kontenera to 100% */
+    box-sizing: border-box;
+    display: flex; /* Używamy Flexboxa do wyśrodkowania */
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    flex-direction: column; /* Elementy będą ustawione w kolumnie */
+    align-items: center; /* Wyśrodkowanie wszystkich elementów w galerii */
 }
 
+/* Kontener siatki */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Zmniejszamy minimalną szerokość komórek na 150px */
+    gap: 10px; /* Odstępy między obrazami */
+    justify-items: center; /* Wyśrodkowanie obrazów w poziomie */
+    align-items: center; /* Wyśrodkowanie obrazów w pionie */
+    width: 100%; /* Zapewnia, że siatka zajmuje pełną szerokość kontenera */
 }
 
+/* Obrazy w galerii */
 .gallery-grid img {
-    width: 100%;
-    border-radius: 10px;
+    width: 100%; /* Obrazy dostosowują się do szerokości komórki siatki */
+    height: auto; /* Zachowują proporcje */
+    border-radius: 10px; /* Zaokrąglone rogi */
     transition: transform 0.3s;
+    object-fit: cover; /* Obrazy wypełniają komórki siatki, zachowując proporcje */
 }
 
+/* Efekt powiększenia obrazu przy najechaniu */
 .gallery-grid img:hover {
     transform: scale(1.05);
 }
+
+
+
 
 #download {
     padding: 40px 0;
@@ -140,28 +149,31 @@ footer {
     text-align: center;
 }
 
-/* Styl przycisków i ukrytych sekcji 
-.hidden {
-    display: none;
+/* Style dla przycisków */
+.button {
+    background-color: #4CAF50; /* Zielony kolor przycisków */
+    border: none; /* Usuwamy ramki */
+    color: white; /* Kolor tekstu na przycisku */
+    padding: 15px 32px; /* Padding dla wygodnego kliknięcia */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    text-decoration: none; /* Usuwamy podkreślenie */
+    display: inline-block; /* Dzięki temu przyciski będą obok siebie */
+    font-size: 16px; /* Rozmiar czcionki */
+    cursor: pointer; /* Wskazówka, że jest to przycisk */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    box-shadow: none; /* Usuwamy cień, jeśli byłby dodany */
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    margin: 5px 0;
-    transition: background-color 0.3s;
+.button:hover {
+    background-color: #45a049; /* Kolor przycisku po najechaniu */
 }
 
-button:hover {
-    background-color: #45a049;
+/* Styl usuwający szary prostokąt za przyciskami */
+.button:focus, .button:active {
+    outline: none; /* Usuwamy obramowanie po kliknięciu lub najechaniu */
 }
- Styl całych bloków przycisków */
-/* Styl całych bloków przycisków */
+
+
 .clickable-block {
     background-color: #4CAF50;
     color: white;
@@ -198,51 +210,35 @@ p {
 
 /* Styl dla modala */
 .modal {
-    display: none;
+    display: none; /* Modal jest ukryty na starcie */
     position: fixed;
-    z-index: 1;
+    z-index: 1000; /* Modal na wierzchu */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Przyciemnione tło */
-    transition: background-color 0.3s ease;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    align-items: center; /* Wyśrodkowanie pionowe */
 }
 
 /* Modalny kontener z treścią */
 .modal-content {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
+    padding: 40px; /* Zwiększony padding, by wnętrze było przestronniejsze */
+    border-radius: 8px;
+    text-align: center;
+    width: 35%; /* Jeszcze bardziej wąski - 35% szerokości ekranu */
+    max-width: 400px; /* Maksymalna szerokość zmniejszona do 400px */
+    max-height: 85%; /* Większa wysokość modala */
     overflow-y: auto;
-    text-align: center;
-}
-
-/* Zawartość modala */
-h2, p {
-    margin: 0;
-    text-align: center;
-}
-
-.modal-content h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.modal-content p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Responsywność dla mniejszych ekranów */
-@media (max-width: 768px) {
-    .mechanic-container {
-        flex-direction: column;
-    }
+    box-sizing: border-box;
+    position: absolute; /* Pozycjonowanie względem ekranu */
+    top: 50%; /* Wyśrodkowanie w pionie */
+    left: 50%; /* Wyśrodkowanie w poziomie */
+    transform: translate(-50%, -50%); /* Wyśrodkowanie modala */
+    color: #333333; /* Kolor tekstu */
+    font-size: 20px; /* Większy rozmiar tekstu */
+    line-height: 1.6; /* Lepsza czytelność dzięki większej przestrzeni między wierszami */
 }
