@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazwa Twojej Gry</title>
+    <title>Cień Dawnych Światów</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
 </head>
@@ -11,7 +11,7 @@
     <!-- Sekcja nagłówka z dużym obrazem tła -->
     <header id="header">
         <div class="overlay">
-            <h1>Nazwa Twojej Gry</h1>
+            <h1>Cień Dawnych Światów</h1>
             <p>„Wejdź w nieznane i zmierz się z własnym przeznaczeniem...”</p>
             <a href="#about" class="scroll-button">Rozpocznij Przygodę</a>
         </div>
@@ -21,35 +21,33 @@
     <section id="about">
         <h2>O Grze</h2>
         <p>
-            „Nazwa Twojej Gry” to nie tylko gra – to doświadczenie, które zmienia sposób patrzenia na otaczający świat. Zanurz się w post-apokaliptycznym świecie, gdzie zło czai się w cieniu, a przetrwanie wymaga czegoś więcej niż tylko odwagi. Każdy krok, każdy wybór buduje historię, którą tworzysz samodzielnie. Czekają cię moralne dylematy, zdrady i niespodziewane sojusze, gdzie lojalność może być równie krucha, co życie twoich towarzyszy.
+            „Cień Dawnych Światów” to nie tylko gra – to doświadczenie, które zmienia sposób patrzenia na otaczający świat. Zanurz się w post-apokaliptycznym świecie, gdzie zło czai się w cieniu, a przetrwanie wymaga czegoś więcej niż tylko odwagi. Każdy krok, każdy wybór buduje historię, którą tworzysz samodzielnie. Czekają cię moralne dylematy, zdrady i niespodziewane sojusze, gdzie lojalność może być równie krucha, co życie twoich towarzyszy.
         </p>
     </section>
 
-    <!-- Sekcja mechanik gry -->
+    <!-- Sekcja z przyciskami do rozwijanych szczegółów -->
     <section id="mechanics">
         <h2>Mechaniki Gry</h2>
-        <p>
-            Gra łączy eksplorację, emocjonującą walkę i głęboki system rozwoju postaci, dając ci pełną swobodę w budowaniu własnego stylu gry. Twórcy zadbali o każdy detal, by świat ożył na twoich oczach, a każda mechanika miała znaczenie.
-        </p>
-        <div class="mechanics-details">
-            <div class="mechanic">
-                <h3>Eksploracja</h3>
-                <p>
-                    Świat gry to pełen detali i niebezpieczeństw otwarty teren, gdzie każdy zakątek kryje coś nowego. Eksplorując ruiny zapomnianych miast i tajemnicze jaskinie, odkryjesz ukryte historie, które stopniowo odsłonią przed tobą przeszłość tego miejsca. To świat, w którym nic nie jest oczywiste – każda podróż może zakończyć się nową misją, znajdźką, a nawet niespodziewanym sojusznikiem.
-                </p>
-            </div>
-            <div class="mechanic">
-                <h3>Walka</h3>
-                <p>
-                    Walka to wyzwanie i satysfakcja w jednym. System walki jest dynamiczny, brutalny i wymaga strategii – musisz rozważnie dobierać broń i umiejętności, by mierzyć się z przeciwnikami o różnym poziomie trudności. Każde starcie to test umiejętności, a wygrana wymaga refleksu i przemyślanej taktyki. Gra nagradza cię za zręczność, ale kara za błędy.
-                </p>
-            </div>
-            <div class="mechanic">
-                <h3>System Rozwoju</h3>
-                <p>
-                    Twój bohater ewoluuje z każdym krokiem. Każda decyzja i każda wygrana walka rozwija jego umiejętności, które dostosowujesz do własnego stylu gry. Możesz wybrać ścieżkę cichego łowcy, brutalnego wojownika lub przebiegłego stratega, a każda z tych dróg otworzy przed tobą unikalne możliwości i wyzwania.
-                </p>
-            </div>
+
+        <div class="mechanic">
+            <button onclick="toggleContent('exploration')">Eksploracja</button>
+            <p id="exploration" class="hidden">
+                Świat gry to pełen detali i niebezpieczeństw otwarty teren, gdzie każdy zakątek kryje coś nowego. Eksplorując ruiny zapomnianych miast i tajemnicze jaskinie, odkryjesz ukryte historie, które stopniowo odsłonią przed tobą przeszłość tego miejsca...
+            </p>
+        </div>
+
+        <div class="mechanic">
+            <button onclick="toggleContent('combat')">Walka</button>
+            <p id="combat" class="hidden">
+                Walka to wyzwanie i satysfakcja w jednym. System walki jest dynamiczny, brutalny i wymaga strategii – musisz rozważnie dobierać broń i umiejętności, by mierzyć się z przeciwnikami o różnym poziomie trudności...
+            </p>
+        </div>
+
+        <div class="mechanic">
+            <button onclick="toggleContent('character')">System Rozwoju i Wybory Moralne</button>
+            <p id="character" class="hidden">
+                Każda decyzja podjęta przez gracza wpływa na świat, a także na samego Nohana. W niektórych alternatywnych rzeczywistościach Nohan może napotkać wersje siebie samego – w niektórych wersjach jest szanowanym przywódcą, w innych bezwzględnym tyranem...
+            </p>
         </div>
     </section>
 
@@ -71,7 +69,19 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Nazwa Twojej Gry. Wszystkie prawa zastrzeżone.</p>
+        <p>&copy; 2024 Cień Dawnych Światów. Wszystkie prawa zastrzeżone.</p>
     </footer>
+
+    <script>
+        // Funkcja do rozwijania i zwijania sekcji
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+            } else {
+                content.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
 </html>
