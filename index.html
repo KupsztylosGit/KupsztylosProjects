@@ -71,9 +71,8 @@
     </section>
 
     <!-- Modal (wyskakujące okno) -->
-    <div id="modal" class="modal">
+    <div id="modal" class="modal" onclick="closeModal(event)">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modal-title"></h2>
             <p id="modal-content"></p>
         </div>
@@ -102,15 +101,19 @@
                 content.innerHTML = 'Każda decyzja podjęta przez gracza wpływa na świat, a także na samego Nohana. W niektórych alternatywnych rzeczywistościach Nohan może napotkać wersje siebie samego – w niektórych wersjach jest szanowanym przywódcą, w innych bezwzględnym tyranem...';
             }
 
+            // Dodaj przyciemnienie tła
+            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.6)"; // Przyciemnienie tła
+
             modal.style.display = "block";  // Ustawiamy modal na widoczny
-            document.body.style.filter = "blur(5px)";  // Rozmycie tła
         }
 
         // Funkcja do zamykania modala
-        function closeModal() {
-            var modal = document.getElementById('modal');
-            modal.style.display = "none";  // Ukryj modal
-            document.body.style.filter = "none";  // Przywróć normalny wygląd tła
+        function closeModal(event) {
+            if (event.target === document.getElementById('modal')) {
+                var modal = document.getElementById('modal');
+                modal.style.display = "none";  // Ukryj modal
+                document.body.style.backgroundColor = "";  // Przywróć oryginalne tło
+            }
         }
     </script>
 </body>
