@@ -161,6 +161,7 @@ button:hover {
     background-color: #45a049;
 }
  Styl całych bloków przycisków */
+/* Styl całych bloków przycisków */
 .clickable-block {
     background-color: #4CAF50;
     color: white;
@@ -171,6 +172,7 @@ button:hover {
     width: 30%;
     display: inline-block;
     transition: transform 0.3s ease;
+    text-align: center;
 }
 
 .clickable-block:hover {
@@ -226,3 +228,4 @@ p {
     text-decoration: none;
     cursor: pointer;
 }
+

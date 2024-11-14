@@ -88,6 +88,7 @@
             var title = document.getElementById('modal-title');
             var content = document.getElementById('modal-content');
 
+            // Ustawianie treści w zależności od klikniętej sekcji
             if (section === 'exploration') {
                 title.innerHTML = 'Eksploracja';
                 content.innerHTML = 'Świat gry to pełen detali i niebezpieczeństw otwarty teren, gdzie każdy zakątek kryje coś nowego. Eksplorując ruiny zapomnianych miast i tajemnicze jaskinie, odkryjesz ukryte historie, które stopniowo odsłonią przed tobą przeszłość tego miejsca...';
@@ -99,15 +100,15 @@
                 content.innerHTML = 'Każda decyzja podjęta przez gracza wpływa na świat, a także na samego Nohana. W niektórych alternatywnych rzeczywistościach Nohan może napotkać wersje siebie samego – w niektórych wersjach jest szanowanym przywódcą, w innych bezwzględnym tyranem...';
             }
 
-            modal.style.display = "block";
-            document.body.style.filter = "blur(5px)";
+            modal.style.display = "block";  // Ustawiamy modal na widoczny
+            document.body.style.filter = "blur(5px)";  // Rozmycie tła
         }
 
         // Funkcja do zamykania modala
         function closeModal() {
             var modal = document.getElementById('modal');
-            modal.style.display = "none";
-            document.body.style.filter = "none";
+            modal.style.display = "none";  // Ukryj modal
+            document.body.style.filter = "none";  // Przywróć normalny wygląd tła
         }
     </script>
 </body>
