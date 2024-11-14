@@ -162,6 +162,7 @@ button:hover {
 }
  Styl całych bloków przycisków */
 /* Styl całych bloków przycisków */
+/* Styl całych bloków przycisków */
 .clickable-block {
     background-color: #4CAF50;
     color: white;
@@ -169,10 +170,9 @@ button:hover {
     border-radius: 8px;
     margin: 10px;
     cursor: pointer;
-    width: 30%;
-    display: inline-block;
-    transition: transform 0.3s ease;
+    width: 100%;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .clickable-block:hover {
@@ -187,6 +187,14 @@ h3 {
 p {
     margin-top: 10px;
     font-size: 14px;
+}
+
+/* Kontener dla przycisków, aby były obok siebie */
+.mechanic-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 /* Styl dla modala */
