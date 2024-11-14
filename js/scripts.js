@@ -1,13 +1,13 @@
-// Smooth scrolling to sections
+// Smooth scrolling
 document.querySelectorAll('.scroll-button').forEach(button => {
     button.addEventListener('click', (event) => {
+        event.preventDefault();
         const target = document.querySelector(event.target.getAttribute('href'));
         target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// Akcja na przycisku pobierania gry
+// Alert przy pobieraniu gry
 document.querySelector('.download-button').addEventListener('click', () => {
-    alert("Przekierowanie do strony pobierania gry...");
-    // Możesz przekierować do konkretnego pliku lub strony
+    alert("Zaraz pobierzesz grę! Przygotuj się na przygodę.");
 });

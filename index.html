@@ -4,53 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nazwa Twojej Gry</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
+    <!-- Sekcja nagłówka z dużym obrazem tła -->
     <header id="header">
-        <h1>Nazwa Twojej Gry</h1>
-        <p>Unikalne doświadczenie w Twoim świecie</p>
-        <a href="#gameplay" class="scroll-button">Zobacz więcej</a>
+        <div class="overlay">
+            <h1>Nazwa Twojej Gry</h1>
+            <p>„Wejdź w nieznane i zmierz się z własnym przeznaczeniem...”</p>
+            <a href="#about" class="scroll-button">Rozpocznij Przygodę</a>
+        </div>
     </header>
 
+    <!-- Sekcja opisu gry -->
     <section id="about">
         <h2>O Grze</h2>
-        <p>Opis fabuły i założenia gry. <em>Na przykład:</em> „Wkrocz w świat pełen przygód, gdzie każdy wybór ma znaczenie...”</p>
+        <p>Twoja przygoda zaczyna się w ciemnych zakamarkach opustoszałego miasta, pełnego niebezpieczeństw i zagadek. Każda decyzja ma znaczenie i może zmienić przyszłość świata. Wyrusz w podróż, gdzie przyjaźń, zdrada i przetrwanie odgrywają kluczową rolę.</p>
     </section>
 
+    <!-- Sekcja mechanik gry -->
     <section id="mechanics">
         <h2>Mechaniki Gry</h2>
-        <p>Opis systemów w grze – walka, eksploracja, rozwój postaci.</p>
         <div class="mechanics-details">
             <div class="mechanic">
                 <h3>Eksploracja</h3>
-                <p>Dynamiczne środowisko otwartego świata...</p>
+                <p>Otwarty świat pełen ukrytych miejsc, sekretnych przejść i zapomnianych reliktów. Odkrywaj, podejmuj decyzje i formuj swój los.</p>
             </div>
             <div class="mechanic">
                 <h3>Walka</h3>
-                <p>Szybka, brutalna walka z wykorzystaniem...</p>
+                <p>Intensywne i dynamiczne starcia z unikalnymi przeciwnikami. Wykorzystaj zręczność, umiejętności i strategię, aby przetrwać.</p>
+            </div>
+            <div class="mechanic">
+                <h3>System Rozwoju</h3>
+                <p>Rozwijaj swoje umiejętności i wyposażenie, dostosowując styl gry do własnych potrzeb.</p>
             </div>
         </div>
     </section>
 
+    <!-- Sekcja galerii -->
     <section id="gallery">
         <h2>Galeria</h2>
         <div class="gallery-grid">
-            <img src="img/screenshot1.jpg" alt="Screenshot 1">
-            <img src="img/screenshot2.jpg" alt="Screenshot 2">
-            <img src="img/screenshot3.jpg" alt="Screenshot 3">
-            <!-- Dodaj więcej obrazków -->
+            <img src="https://via.placeholder.com/400x300" alt="Screenshot 1">
+            <img src="https://via.placeholder.com/400x300" alt="Screenshot 2">
+            <img src="https://via.placeholder.com/400x300" alt="Screenshot 3">
+            <img src="https://via.placeholder.com/400x300" alt="Screenshot 4">
         </div>
     </section>
 
+    <!-- Sekcja pobierania -->
     <section id="download">
         <h2>Pobierz Grę</h2>
         <button class="download-button">Pobierz Teraz</button>
     </section>
 
     <footer>
-        <p>&copy; 2024 Nazwa Twojej Gry. Wszelkie prawa zastrzeżone.</p>
+        <p>&copy; 2024 Nazwa Twojej Gry. Wszystkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
